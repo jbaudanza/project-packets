@@ -1,16 +1,23 @@
 # Chat room
 
-In this project, you will create a simple chat room application.
+In this project, you will create a simple chat room application. Anyone that is running your application will be able to
+send messages to other users over the Internet.
 
 ## Core concepts
 
-Firebase
+We will be using a service called Firebase to store and send messages over the Internet. Firebase allows you to build
+networked applications without requiring you to build and maintain a server. For more information, visit 
+www.firebase.com and read the documentation.
 
 ## Files
 
-manifest.json
+*manifest.json*
 
-```manifest.json
+The only unique part of this manifest is the "content_security_policy" section. Because your application will be accessing
+resources on the Internet, we need to instruct Chrome to allow certain URLs to be requested. Normally, Chrome applications
+are not allowed to make requests to remote resources on the Internet.
+
+```json
 {
   "name": "My Chat Room",
   "description": "This app lets you chat with other people.",
@@ -52,14 +59,14 @@ chat.html
 
 chat.css
 ```
-ul#chat-message-list {
-  border: 1px solid #ccc;
+#chat-message-list {
   height: 500px;
+  border: 1px solid #ccc;
   overflow-y: auto;
   padding: 15px;
 }
 
-ul#chat-message-list li {
+#chat-message-list li {
   list-style-type: none;
   padding: 0;
 }
@@ -104,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var messageInput = document.getElementById('message-input');
 
   /*
-   * We tell firebase to notify our application when a new chat messages is
-   * added. This message may be coming from a remote user, or it may be the
+   * We tell firebase to notify our application when a new chat message is
+   * added. This message may be coming from a remote user, or it may be from the
    * user that is running the application locally
    */
   chatRoom.on('child_added', function(snapshot) {
@@ -156,3 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
+## Improvement ideas
+
+  - Let users to identify themselves with a nickname. Send the nickname with each message.
+  - Let users to upload pictures into the chatroom.
+  - Let users join multiple chat rooms
