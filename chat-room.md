@@ -5,9 +5,20 @@ send messages to other users over the Internet.
 
 ## Core concepts
 
-We will be using a service called Firebase to store and send messages over the Internet. Firebase allows you to build
-networked applications without requiring you to build and maintain a server. For more information, visit 
-www.firebase.com and read the documentation.
+  * Integrating software that is written by a third party.
+  * Communicating and storing things over the Internet.
+
+So far, you have been building sofware that runs on your personal machine. You have been accessing data that exists
+on your machine or has been fetched for you by your browser.
+
+In this project, we will show you how to communicate with other machines and store data on the Internet.
+
+To do this, you need to use a server. A server is a computer that is always online and connected to the Internet.
+
+Setting up and running your own server can be expensive and difficult. Firebase is a company that has servers, and allows
+you to build applications that use them.
+
+For more information, visit www.firebase.com and read the documentation.
 
 ## Files
 
@@ -80,7 +91,7 @@ chat.js
 
 ```javascript
 /*
- * We connect to the remote Firebase database and store the connection into the
+ * We connect to the remote Firebase server and store the connection into the
  * `chatRoom` variable.
  *
  * You may want to change the URL below to be something unique. For example,
@@ -113,13 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
   /*
    * We tell firebase to notify our application when a new chat message is
    * added. This message may be coming from a remote user, or it may be from the
-   * user that is running the application locally
+   * user that is running the application locally.
    */
   chatRoom.on('child_added', function(snapshot) {
 
     /*
      * `document.createElement` is a function that allows us to add new elements
-     * to the HTML file. In this case, we are creating an LI element, inserting
+     * to the HTML file. In this case, we are creating an `LI` element, inserting
      * the text of the new message, and adding it to the list.
      */
     var li = document.createElement('li');
