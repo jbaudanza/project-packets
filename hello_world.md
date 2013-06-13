@@ -46,12 +46,14 @@ This file describes what our popup will look like.
 <html>
   <head>
     <style>                                                                                                                                                                                                                                 
+      <!-- this block describes the style of the body -->
       body {                                                                                                                                                                                                                                
         min-width: 357px;                                                                                                                                                                                                                   
         overflow-x: hidden;                                                                                                                                                                                                                 
       }                                                                                                                                                                                                                                     
     </style>
   </head>
+  <!-- this block contains the primary content of the page -->
   <body>
     <h1 style="color:black">Hello, world!</h1>
   </body>
