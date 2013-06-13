@@ -17,7 +17,7 @@ First, download and install Chrome Web Browser from here: https://www.google.com
 
 If you have a text editor of choice, feel free to use it. If not, we recommend the Slim Text Chrome Application, which you can get here: http://slimtext.org/.
 
-In the rest of this packet, we will provide you with the necessary text files for your first Chrome extensions. Create a folder on your computer called hello_world. For each of these files, create a new file in your text editor. To do this in Slimtext, first open the application by clicking the green-S icon in the top right of your Chrome Browser. Navigate to the folder you created by clicking through the files on the left and directories above. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. Be sure to name the files as they appear below.
+In the rest of this packet, we will provide you with the necessary text files for your first Chrome extensions. Create a folder on your computer called hello_world. For each of these files, create a new file in your text editor. To do this in Slimtext, first open the application by clicking the green-S icon in the top right of your Chrome Browser. Navigate to the folder you created by clicking through the files on the left and directories above. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. Be sure to name the files as they appear below. Rember to save your files (NOTE: an asterisk by the file name means your changes have not been saved.)!
 
 ## Source Files
 
