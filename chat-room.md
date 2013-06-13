@@ -22,6 +22,8 @@ For more information, visit www.firebase.com and read the documentation.
 
 ## Files
 
+As usual, create a new folder for this project and add the following files: manifest.json, chat.html, chat.css, chat.js
+
 *manifest.json*
 
 The only unique part of this manifest is the "content_security_policy" section. Because your application will be accessing
