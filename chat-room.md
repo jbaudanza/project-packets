@@ -30,7 +30,7 @@ The only unique part of this manifest is the "content_security_policy" section. 
 resources on the Internet, we need to instruct Chrome to allow certain URLs to be requested. Normally, Chrome applications
 are not allowed to make requests to remote resources on the Internet.
 
-```json
+~~~ javascript
 {
   "name": "My Chat Room",
   "description": "This app lets you chat with other people.",
@@ -45,16 +45,25 @@ are not allowed to make requests to remote resources on the Internet.
     }
   }
 }
-```
+~~~
 
 chat.html
 
-```html
+~~~ html
 <!DOCTYPE html>
 <html>
 <head>
+  <!--
+    This next line will load some JavaScript from Firebase's servers. Since our
+    Javascript depends on Firebase, we must load it before our own code.
+   -->
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+
+  <!--
+    Now that Firebase has been loaded, we can load our JavaScript
+  -->
   <script src="chat.js" type="text/javascript"></script>
+
   <link rel="stylesheet" type="text/css" href="chat.css">
 </head>
 <body>
@@ -68,10 +77,13 @@ chat.html
   </form>
 </body>
 </html>
-```
+~~~
+
+<div class='break'></div>
 
 chat.css
-```
+
+~~~ css
 #chat-message-list {
   height: 500px;
   border: 1px solid #ccc;
@@ -87,11 +99,11 @@ chat.css
 input[type=text] {
   width: 100%;
 }
-```
+~~~
 
 chat.js
 
-```javascript
+~~~ javascript
 /*
  * We connect to the remote Firebase server and store the connection into the
  * `chatRoom` variable.
@@ -174,7 +186,13 @@ document.addEventListener('DOMContentLoaded', function() {
     messageInput.value = '';
   });
 });
-```
+~~~
+
+## Running the application
+
+Once you have created your Chrome app, open a new tab tab. There should be an
+icon called "Chat Room".
+
 
 ## Improvement ideas
 
