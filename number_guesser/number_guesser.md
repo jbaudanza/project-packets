@@ -1,23 +1,17 @@
 # Number Guesser
 
-In this project, you will first get set up with your development environment. We will be building Chrome extensions and applications, so you will need to download and install the Google Chrome browser if you do not already have it. You'll also need a way to write, save, and edit text files.
-
-Your first extension is a Hello World Chrome extension that responds to the browser-action of clicking an icon by displaying a pop-up that says "Hello, world!"
+This Chrome Application will 
 
 ## Core Concepts
 
-  * Installing Chrome
-  * Finding a text editor
-  * HTML
-  * Installing a Chrome Extension
+  * variables
+  * Math in Javascript
+  * if/else statements
+  * CSS
 
 ## Getting Started
 
-First, download and install Chrome Web Browser from here: https://www.google.com/intl/en/chrome/browser/.
-
-If you have a text editor of choice, feel free to use it. If not, we recommend the Slim Text Chrome Application, which you can get here: http://slimtext.org/.
-
-In the rest of this packet, we will provide you with the necessary text files for your first Chrome extensions. Create a folder on your computer called hello_world. For each of these files, create a new file in your text editor. To do this in Slimtext, first open the application by clicking the green-S icon in the top right of your Chrome Browser. Navigate to the folder you created by clicking through the files on the left and directories above. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. Be sure to name the files as they appear below. Rember to save your files (NOTE: an asterisk by the file name means your changes have not been saved.)!
+As usual, create a new folder for this packet and put the following files inside.
 
 ## Source Files
 
@@ -45,11 +39,13 @@ In the rest of this packet, we will provide you with the necessary text files fo
 <html>
 <head>
   <script src="guess.js" type="text/javascript"></script>
+  <!-- This tells the browser to look at the file guess.css to determine the style of the page. -->
   <link rel="stylesheet" type="text/css" href="guess.css">
 </head>
 <body>
-  <h1 id=guess-title'>Guess my number!</h1>
+  <h1 id=guess-title>Guess my number!</h1>
 
+  <!-- An unordered list ("ul") of list items ("li"s), currently empty. -->
   <ul id='guess-list'>
   </ul>
 
@@ -63,43 +59,60 @@ In the rest of this packet, we will provide you with the necessary text files fo
 *guess.js*
 
 ```javascript
-var numGuesses = 0;
-
 document.addEventListener('DOMContentLoaded', function() {
 
+	// The secretNumber variable refers to a random number between 0 and 10,000.
+	// Math.random returns a random value betweeon 0.0 and 1.0
+	// Math.floor takes a decimal number and truncates the decimals, leaving an integer
 	var secretNumber = Math.floor(Math.random()*10000);
+	// numGuesses will keep track of how many guesses the user has made. So far, none.
+	var numGuesses = 0;
+
+	// variables referencing elements of the HTML
 	var guessList = document.getElementById('guess-list');
 	var form = document.getElementById('guess-form');
 	var guessInput = document.getElementById('guess-input');
-	// var guessTitle = document.getElementById('guess-title');
-
+	
+	// This is the code we execute each time the form is submitted (when the user hits enter in the input box).
 	form.addEventListener('submit', function(event) {
 		event.preventDefault();
 
+		// the user's input
 		var guess = guessInput.value;
+		// increase the number of guesses.
 		numGuesses += 1;
 
+		// a new list item
 		var li = document.createElement('li');
+		// sets the text of the list item to the user's input
 		li.textContent = guess;
+		// adds the list item to the unordered list guessList to display to the user.
 		guessList.appendChild(li);
 
+		// another new list item
 		var li2 = document.createElement('li');
+		// this conditional checks if the user's input is a number
 		if (isNaN(parseFloat(guess))) {
 		    li2.textContent = "You must guess an integer.";
+		    // change the color of this list item to red
 		    li2.style.color = "red";
-		    numGuesses -= 1;
 		} else if (guess == secretNumber) {
 		    li2.textContent = "You guessed it! It took you " + numGuesses + " guesses.";
+		    // to green...
 		    li2.style.color = "green";
 		} else if (guess < secretNumber) {
 		    li2.textContent = "Tooooo looow...";
+		    // to blue...
 		    li2.style.color = "blue";
 		} else {
 		    li2.textContent = "Too high!";
+		    // to yellow.
 		    li2.style.color = "yellow";
 		}
+		// add this list item to the guessList also.
 		guessList.appendChild(li2);
 
+		// always display the bottom of the list and clear the input form
 		guessList.scrollTop = guessList.scrollHeight;
 		guessInput.value = '';
 	    });
@@ -109,24 +122,30 @@ document.addEventListener('DOMContentLoaded', function() {
 *guess.css*
 
 ```css
-#guess-list {
-  height: 400px;
-  border: 1px solid #ccc;
-  overflow-y: auto;
-  padding: 15px;
-}
-
+/* This block changes the font for the entire HTML body. */
 body {
   font-family:"Helvetica Neue", Arial, sans-serif;
 }
 
+/* Defines the styling for the guess-list. */
+#guess-list {
+  height: 400px;
+  border: 1px solid #ccc;
+  /* Automatically create a scrollbar if the content is taller than the window.*/
+  overflow-y: auto;
+  padding: 15px;
+}
+
 #guess-list li {
+  /* The default style for a list item is a bullet, so here we set it to none. */
   list-style-type: none;
   padding: 0;
+  /* Set the font size. */
   font-size: 16pt;
 }
 
 input[type=text] {
+  /* Makes the input box the width of the entire browser window. */
   width: 100%;
 }
 ```
@@ -134,3 +153,4 @@ input[type=text] {
 ## See what you can do!
 
   - Report how many times the user guesses too high and too low.
+  - Don't count guesses when the user didn't input a number.
