@@ -1,29 +1,22 @@
-# Hello World
+# Hello Again
 
-In this project, you will first get set up with your development environment. We will be building Chrome extensions and applications, so you will need to download and install the Google Chrome browser if you do not already have it. You'll also need a way to write, save, and edit text files.
-
-Your first extension is a Hello World Chrome extension that responds to the browser-action of clicking an icon by displaying a pop-up that says "Hello, world!"
+In this project, you will write your first Chrome Application. You will set it up the same way as the extension, but after you are done, you will launch it a little bit differently.
 
 ## Core Concepts
 
-  * Installing Chrome
-  * Finding a text editor
-  * HTML
-  * Installing a Chrome Extension
+  * Javascript functions
+  * HTML forms
+  * Installing a Chrome Application
 
 ## Getting Started
 
-First, download and install Chrome Web Browser from here: https://www.google.com/intl/en/chrome/browser/.
-
-If you have a text editor of choice, feel free to use it. If not, we recommend the Slim Text Chrome Application, which you can get here: http://slimtext.org/.
-
-In the rest of this packet, we will provide you with the necessary text files for your first Chrome extensions. Create a folder on your computer called hello_world. For each of these files, create a new file in your text editor. To do this in Slimtext, first open the application by clicking the green-S icon in the top right of your Chrome Browser. Navigate to the folder you created by clicking through the files on the left and directories above. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. Be sure to name the files as they appear below. Rember to save your files (NOTE: an asterisk by the file name means your changes have not been saved.)!
+By now you should have already downloaded Chrome and gotten set up with a text editor (If not, see the "Hello World" packet.). Create a new folder for this packet, and as before copy each of the files below into that folder.
 
 ## Source Files
 
 *manifest.json*
 
-Every Chrome extension has a manifest file. It tells Chrome which files provide the content and behavior of the extension.
+This manifest file is similar to that for Hello World, but now instead of a browser-action we are telling Chrome that this is an "app," and when Chrome launches the app, it should load "hello.html."
 
 ```json
 {
@@ -42,19 +35,22 @@ Every Chrome extension has a manifest file. It tells Chrome which files provide 
 
 *hello.html*
 
-This file describes what our popup will look like.
+When the application loads, Chrome will display this HTML in the main browser window (not in a pop-up).
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Tells the browser to run the code in hello.js. -->
   <script src="hello.js" type="text/javascript"></script>
-<!--  <link rel="stylesheet" type="text/css" href="hello.css"> -->
 </head>
 <body>
+  <!-- A big header at the top of the page, in black, that says "Hello, world!" -->
   <h1 style="color:black" id='chatroom-title'>Hello, world!</h1>
 
+  <!-- This tag defines an HTML form, which can be used for getting user input. -->
   <form id='chat-form'>
+    <!-- A text box within the form. -->
     <input type="text" name="message" id="message-input">
   </form>
 </body>
@@ -66,31 +62,46 @@ This file describes what our popup will look like.
 This file tells the page what actions to perform.
 
 ```javascript
+// "document" is the variable that refers to the HTML structure.
 document.addEventListener('DOMContentLoaded', function() {
 
+	// This gives us a reference to the HTML element whose id is "chat-form."
 	var form = document.getElementById('chat-form');
+        // This gives us a reference to the element whose id is "message-input."
 	var messageInput = document.getElementById('message-input');
+	// This one is for the title.
 	var chatTitle = document.getElementById('chatroom-title');
 
+	// An "EventListener" calls the function passed in when the "submit" event is detected on the form.
 	form.addEventListener('submit', function(event) {
 		event.preventDefault();
 
+		// The variable "name" now refers to the text the user typed into the message input box in the form.
 		var name = messageInput.value;
 
+		// Here we change the text of the title of the page.
 		chatTitle.textContent = "Hello, " + name + "!";
 
-		messageInput.value = '';
+		// This line sets the value of the input box back to the empty string.
+		messageInput.value = "";
 	    });
+	// Don't forget to make sure your parentheses and brackets line up!
     });
 ```
 
-## Running your Chrome extension
+## Running your Chrome Application
 
-To run your Chrome extension, go to chrome://extensions in your Chrome browser. Click the checkbox next to "Developer mode" in the top right, then click “Load unpacked extension...” button. Select the folder that your manifest and html files are in. You should see your extension appear in the list of extensions below.
+Add your application the same way as you did the Hello World extension from chrome://extensions in your Chrome browser. Again, try to fix any errors that you see pop up.
 
-If you see a pop-up with an error message, it propably means that you mis-typed something in one of the files. See if you can figure out what you did wrong by reading the error message. Once you think you've fixed the problem, click the checkbox next to "Enable" near your extension and then click "Reload." Don't hesitate to ask for help if you get stuck. To ask for help, you can put your name in THIS QUEUE and a volunteer will come find you.
+Once your application is installed, open a new tab in Chrome and select the "Hello Again" box. Try typing "D-code" in the input box and hit enter. If the top of the page now says "Hello, D-code!" and the input box is empty, congratulations! You've made your first Chrome Application!
 
-Once your extension is installed successfully, you should see a puzzle-piece icon in the top right of your Chrome browser. Click it!
+If somethings seems wrong, open up the JavaScript Console by following these steps.
+
+1. Click "View" in the Chrome menu bar at the top.
+2. Scroll down to "Developer" (with the arrow next to it), and another menu should open to the side.
+3. Click "JavaScript Console." A window should appear at the bottom of your browser.
+
+In this console, you may see a small red number in the bottom right corner. When you click it, you should see a line of red text telling you what your error is, and at which line of which file. Try debugging your application yourself, and if you can't figure it out, add yourself to the help queue.
 
 ## See what you can do!
 
