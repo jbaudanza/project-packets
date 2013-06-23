@@ -102,6 +102,7 @@ function handleText(textNode)
 	haveAlerted = 1;
     }
     
+    // set the value of the text node to be the text that we've edited.
     textNode.nodeValue = v;
 }
 ```
