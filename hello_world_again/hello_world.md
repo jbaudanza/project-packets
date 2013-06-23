@@ -65,7 +65,7 @@ This file describes what our popup will look like.
 
 This file tells the page what actions to perform.
 
-```
+```javascript
 document.addEventListener('DOMContentLoaded', function() {
 
 	var form = document.getElementById('chat-form');
