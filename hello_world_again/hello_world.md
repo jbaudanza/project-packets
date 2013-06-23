@@ -11,7 +11,7 @@ In this project, you will write your first Chrome Application. You will set it u
 
 ## Getting Started
 
-By now you should have already downloaded Chrome and gotten set up with a text editor (If not, see the "Hello World" packet.). Create a new folder for this packet, and as before copy each of the files below into that folder.
+By now you should have already downloaded Chrome and gotten set up with a text editor (If not, see the "Hello World" packet.). Create a new folder (call it whatever you want) for this packet, and as before copy each of the files below into that folder.
 
 ## Source Files
 
