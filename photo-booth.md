@@ -1,4 +1,4 @@
-# Chat room
+# Photo booth
 
 In this project, you will create a simple photo booth application. You will use
 the local video camera on your computer and to take snapshots. You can then apply
@@ -12,19 +12,15 @@ visual filters to your snapshots.
 The ability to capture and manipulate video and audio from Javascript is part
 of a new standard called WebRTC. For more information, try some of these links:
 
-  http://www.html5rocks.com/en/tutorials/getusermedia/intro/
-  http://www.webrtc.org/
+  * http://www.html5rocks.com/en/tutorials/getusermedia/intro/
+  * http://www.webrtc.org/
 
 
 ## Files
 
-As usual, create a new folder for this project and add the following files: manifest.json, chat.html, chat.css, chat.js
+As usual, create a new folder for this project and add the following files: manifest.json, photobooth.html, photobooth.css, photobooth.js
 
 *manifest.json*
-
-The only unique part of this manifest is the "content_security_policy" section. Because your application will be accessing
-resources on the Internet, we need to instruct Chrome to allow certain URLs to be requested. Normally, Chrome applications
-are not allowed to make requests to remote resources on the Internet.
 
 ~~~ javascript
 {
@@ -40,6 +36,8 @@ are not allowed to make requests to remote resources on the Internet.
   }
 }
 ~~~
+
+<div class='break'></div>
 
 photobooth.html
 
