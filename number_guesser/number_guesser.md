@@ -62,7 +62,7 @@ In the rest of this packet, we will provide you with the necessary text files fo
 
 *guess.js*
 
-```
+```javascript
 var numGuesses = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 *guess.css*
 
-```
+```css
 #guess-list {
   height: 400px;
   border: 1px solid #ccc;
