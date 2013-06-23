@@ -1,0 +1,12 @@
+{
+  "name": "Hello World Again",
+  "description": "Say hello to whoever.",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "app": {
+    "launch": {
+      "local_path": "hello.html"
+    }
+  }
+}
