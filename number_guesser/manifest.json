@@ -1,0 +1,12 @@
+{
+  "name": "Number Guesser",
+  "description": "This app tries to get you to guess the secret number.",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "app": {
+    "launch": {
+      "local_path": "guess.html"
+    }
+  }
+}
