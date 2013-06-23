@@ -7,6 +7,7 @@ In this project, you will write your first Chrome Application. You will set it u
   * Javascript functions
   * HTML forms
   * Installing a Chrome Application
+  * The JavaScript Console
 
 ## Getting Started
 
