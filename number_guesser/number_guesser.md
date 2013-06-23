@@ -1,6 +1,6 @@
 # Number Guesser
 
-This Chrome Application will 
+This Chrome Application will ask the user to guess a secret number that it generated randomly. It will tell the user whether their guesses are too low, too high, or just right!
 
 ## Core Concepts
 
