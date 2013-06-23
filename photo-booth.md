@@ -53,7 +53,7 @@ photobooth.html
     <button data-effect="sepia(1)">Sepia</button>
     <button data-effect="invert(1)">Invert</button>
     <button data-effect="blur(3px)">Blur</button>
-    <button data-effect="grayscale(1)">Greyscale</button>
+    <button data-effect="grayscale(1)">Grayscale</button>
     <button data-effect="">Normal</button>
   </div>
 

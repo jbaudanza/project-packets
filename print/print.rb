@@ -15,10 +15,14 @@ def render(&proc)
   template.result(binding)
 end
 
-output = render do
-  markdown.render(File.read('chat-room.md'))
-end
+Dir.glob('../*.md').each do |markdown_name|
+  output = render do
+    markdown.render(File.read(markdown_name))
+  end
 
-File.open('chat-room.html', 'w') do |file|
-  file.write(output)
+  html_name = markdown_name.sub(/\.md$/, '.html')
+
+  File.open(File.basename(html_name), 'w') do |file|
+    file.write(output)
+  end
 end
