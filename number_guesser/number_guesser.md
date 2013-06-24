@@ -17,7 +17,7 @@ As usual, create a new folder for this packet and put the following files inside
 
 *manifest.json*
 
-```json
+```javascript
 {
   "name": "Number Guesser",
   "description": "This app tries to get you to guess the secret number.",

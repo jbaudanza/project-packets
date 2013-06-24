@@ -4,7 +4,7 @@ require 'pygmentize'
 
 class PygmentizeHTML < Redcarpet::Render::HTML
   def block_code(code, language)
-    Pygmentize.process(code, language)
+    Pygmentize.process(code, language, ['-O', 'linenos=table'])
   end
 end
 
@@ -15,7 +15,9 @@ def render(&proc)
   template.result(binding)
 end
 
-Dir.glob('../*.md').each do |markdown_name|
+mardowns = Dir.glob('*/*.md') + Dir.glob('../*.md')
+
+mardowns.each do |markdown_name|
   output = render do
     markdown.render(File.read(markdown_name))
   end
