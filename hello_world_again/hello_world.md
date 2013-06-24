@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Running your Chrome Application
 
-Add your application the same way as you did the Hello World extension from chrome://extensions in your Chrome browser. Again, try to fix any errors that you see pop up.
+Add your application the same way as you did the Hello World extension from chrome://extensions in your Chrome browser (you'll still click "Load unpacked extension..." even though it is an application.). Again, try to fix any errors that you see pop up.
 
 Once your application is installed, open a new tab in Chrome and select the "Hello Again" box. Try typing "D-code" in the input box and hit enter. If the top of the page now says "Hello, D-code!" and the input box is empty, congratulations! You've made your first Chrome Application!
 
