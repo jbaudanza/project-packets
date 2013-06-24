@@ -23,7 +23,7 @@ In the rest of this packet, we will provide you with the necessary text files fo
 2. For each of the files below, create a new file in your text editor. 
 3. To do this in Slimtext, first open the application by clicking the green-S icon in the top right of your Chrome Browser. 
 
-![alt text](https://github.com/jbaudanza/project-packets/tree/master/images/slimtext_new_file.png "hello world")
+![alt text](https://github.com/jbaudanza/project-packets/blob/master/images/slimtext_new_file.png "hello world")
 
 4. Navigate to the folder you created by clicking through the files on the left and directories above. 
 5. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. 
