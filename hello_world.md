@@ -34,7 +34,7 @@ Be sure to name the files as they appear below. Rember to save your files (NOTE:
 
 *manifest.json*
 
-Every Chrome extension has a manifest file. It tells Chrome which files provide the content and behavior of the extension.
+Every Chrome extension has a manifest file. It tells Chrome which files provide the content and behavior of the extension. In this manifest file, we are telling Chrome to perform a "browser_action." In this case, the "default_popup" item specifies that a pop-up displaying the contents of hello.html should appear.
 
 ```json
 {
