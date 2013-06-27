@@ -1,0 +1,11 @@
+{
+  "name": "To Do List",
+  "description": "This app keeps your to do list tidy",
+  "version": "1.0",
+  "manifest_version": 2,
+  "app": {
+    "launch": {
+      "local_path": "todo.html"
+    }
+  }
+}
