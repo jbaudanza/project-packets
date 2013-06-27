@@ -41,24 +41,4 @@ This project has a core set of functionality that will need to be completed in s
 }
 ~~~
 
-*todo.html*
-
-~~~ html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>To Do List</title>
-  <script src="todo.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="todo.css">
-</head>
-<body>
-  <div class="container">
-    <h2 id="listTitle">ToDo List</h2>
-    <ul class="todoList" id="list">
-    </ul>
-    <button class="command" id="newItem">New Item</button>
-  </div>
-</body>
-</html>
-~~~
 
