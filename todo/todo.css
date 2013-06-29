@@ -1,4 +1,4 @@
-.container{
+#container{
   width:200px;
   height:400px;
   padding:5px;
@@ -6,6 +6,7 @@
 .todoList{
   width:190px;
   padding:5px;
+  
 }
 .todoItem{
   width:180px;
@@ -22,7 +23,6 @@
   padding-left:5px;
 }
 .command{
-  float:left;
   height:35px;
   width:100px;
   font-size:16px;
