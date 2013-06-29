@@ -17,8 +17,7 @@ This project has a core set of functionality that will need to be completed in s
   3.2 flag a reminder if the due date is close (if you've done 1.2)
 4. Sort the items by name
   4.1 sort the items by priority if you did 1.1
-  4.2 sort the items by due date if you did 1.2
-  4.3 sort items with a predecessor after their predecessor item in all sorting types
+  4.2 sort the items by due date if you did 1.2  
 5. Display a 'completed' button and mark the to-do item as complete if ticked
   5.1 add sub-tasks that all need to be completed for the main task to be complete
 6. Purge the list of completed items
