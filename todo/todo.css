@@ -56,3 +56,6 @@ label{
   font-family:sans-serif;
   font-weight:bold;
 }
+.complete{
+  text-decoration:line-through;
+}
