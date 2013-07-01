@@ -1,0 +1,10 @@
+#my-photos {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#my-photos canvas {
+  display: inline-block;
+  height: 150px;
+  margin-right: 2px;
+}

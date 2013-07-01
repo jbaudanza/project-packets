@@ -1,0 +1,12 @@
+{
+  "name": "Photobooth",
+  "description": "This app lets you take snapshots from your web camera.",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "app": {
+    "launch": {
+      "local_path": "video.html"
+    }
+  }
+}

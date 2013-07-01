@@ -1,0 +1,15 @@
+{
+  "name": "My Chat Room",
+  "description": "This app lets you chat with other people.",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://jbaudanza.firebaseIO-demo.com/ https://s-demo.firebaseio-demo.com/; object-src 'self'",
+
+  "app": {
+    "launch": {
+      "local_path": "chat.html"
+    }
+  }
+}
+
