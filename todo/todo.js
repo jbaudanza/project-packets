@@ -54,11 +54,13 @@ function createItem(title, description){
  * Step 2: store the todo list in local storage                   *
  ******************************************************************/
 // event handler to store everything if the window closes
-window.onunload = storeItems;
-
-function storeItems(){
+window.addEventListener("unload", function(){
   // load the items from the html into an array
   var list = getItemsFromHTML();
+  storeItems(list);
+});
+
+function storeItems(list){
   // store the JSON representation of the array in local storage
   var jsonList = JSON.stringify(list);
   localStorage.todoList = jsonList;
@@ -104,7 +106,7 @@ function todoItem(title, description){
  * Step 3: load the todo list from local storage                   *
  ******************************************************************/
 // event handler to store everything if the window closes
-window.onload = loadItems;
+window.addEventListener("load", loadItems);
 
 function loadItems(){
   //grab the list from local storage
@@ -207,16 +209,29 @@ createItem = function(title, description, complete){
   var todoItem = document.createElement("li");
   todoItem.className="todoItem";
   todoList.appendChild(todoItem);
-  
-  // add the item, depending on whether it's complete or not
-  var innerText= "";
-  
+
+  // complete button
+  var button = document.createElement("button");
+  button.className = "buttonComplete";
+  button.innerHTML = "Done";
+  todoItem.appendChild(button);
+  button.addEventListener("click",function(){completeItem(title);});
+  // title
+  var titleSpan = document.createElement("span");
+  titleSpan.className = "itemTitle";
+  titleSpan.innerHTML =title;
+  todoItem.appendChild(titleSpan);
+  // description
+  var descSpan = document.createElement("span");
+  descSpan.className = "itemDesc";
+  descSpan.innerHTML = description;
+  todoItem.appendChild(descSpan);
+
   if(complete){
-    innerText = "<span class='itemTitle complete'>"+ title + "</span><span class='itemDesc complete'>" + description +"</span>";
-  } else {
-    innerText = "<button class='buttonComplete' id='complete' onclick='completeItem(\""+title+"\")'>done</button><span class='itemTitle'>"+ title + "</span><span class='itemDesc'>" + description +"</span>";
+    button.style.display = "none";
+    titleSpan.className= titleSpan.className + " complete";
+    descSpan.className = descSpan.className + " complete";
   }
-  todoItem.innerHTML = innerText;
 }
 
 function createItems(list){
@@ -252,6 +267,8 @@ function completeItem(title){
   // recreate the items
   deleteList();
   createItems(list);
+  // store the items
+  storeItems(list);
 }
 
 /******************************************************************
@@ -259,10 +276,8 @@ function completeItem(title){
  ******************************************************************/
 // all we're going to do is exclude completed items from being stored
 // which means rewriting the storeItems routine slightly so it only stores incomplete items
-function storeItems(){
-  // load the items from the html into an array
-  var list = getItemsFromHTML();
-
+function storeItems(list){
+  // don't store the completed items
   var newlist = list.filter(function(item){
     return !item.iscomplete;
   });
