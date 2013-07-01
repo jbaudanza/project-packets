@@ -60,11 +60,11 @@ This file describes what our popup will look like.
   <!-- This is an HTML comment. You do not need to type these. -->
   <head>
     <!-- This block describes the style of the body. -->
-    <style>                                                                                                                                                                                                                                 
-      body {                                                                                                                                                                                                                                
-        min-width: 357px;                                                                                                                                                                                                                   
-        overflow-x: hidden;                                                                                                                                                                                                                 
-      }                                                                                                                                                                                                                                     
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
     </style>
   </head>
   <!-- This block contains the primary content of the page. -->

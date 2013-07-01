@@ -5,4 +5,5 @@ Project packs for d-code bootcamp
  * [Chat Room](/chat-root/chat-room.md)
  * [Photo booth](/photo-booth/photo-booth.md)
  * [Substitution](/butt_sub/sub.md)
+ * [Number guesses](/number_guesser/number_guesser.md)
 

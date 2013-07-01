@@ -49,6 +49,10 @@ are not allowed to make requests to remote resources on the Internet.
 
 chat.html
 
+The parts of the code between `<!--` and `-->` are called "comments". They have
+no functional purpose, other than to give notes to the reader. *You do not need
+to type in the comments*
+
 ~~~ html
 <!DOCTYPE html>
 <html>
@@ -81,27 +85,45 @@ chat.html
 
 <div class='break'></div>
 
-chat.css
+*chat.css*
+
+The parts of the code after `//` are "comments". You do not  need to type in the
+comments.
 
 ~~~ css
 #chat-message-list {
+  // Give the message list a height of 500 pixels
   height: 500px;
-  border: 1px solid #ccc;
+
+  // The list will have a solid 1 pixel border.
+  border: 1px solid grey;
+
+  // This tells the browser that the message list should add a scrollbar to
+  // the y-axis
   overflow-y: auto;
+
+  // Add 15 pixels of blank space between the border of the message list and its
+  // contents.
   padding: 15px;
 }
 
 #chat-message-list li {
+  // The browser usually gives lists a default styling, but we want to turn
+  // that off.
   list-style-type: none;
   padding: 0;
 }
 
 input[type=text] {
+  // The text input should be made as wide as possible.
   width: 100%;
 }
 ~~~
 
-chat.js
+*chat.js*
+
+The parts of the code between `/*` and `*/` are called "comments". You do not
+need to type in the comments.
 
 ~~~ javascript
 /*
@@ -190,7 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Running the application
 
-Once you have created your Chrome app, open a new tab tab. There should be an
+Follow the same proceedure in the "hello world" project to install your chat room
+app into Chrome.
+
+Once the app is installed, open a new tab tab. There should be an
 icon called "Chat Room".
 
 

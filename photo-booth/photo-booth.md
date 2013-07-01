@@ -86,7 +86,10 @@ photobooth.css
 }
 ~~~
 
-photobooth.js
+*photobooth.js*
+
+The parts of the code between `/*` and `*/` are "comments". You do not need to
+type in the comments.
 
 ~~~ javascript
 /*
