@@ -22,9 +22,9 @@ The "run_at" item tells Chrome to run the script after it has already rendered t
 ```javascript
 {
   "manifest_version": 2,
-  "name": "Dinosaur to Dinosaur",
+  "name": "Lizard to Dinosaur",
   "version": "1.0",
-  "description": "Replaces the text 'dinosaur' with 'dinosaur.'",
+  "description": "Replaces the text 'lizard' with 'dinosaur.'",
   "content_scripts": 
   [
     {
@@ -60,25 +60,26 @@ function walk(node)
       case 1:  // Element
       case 9:  // Document
       case 11: // Document fragment
-      // This block of code is executed if the nodeType is any of the three above
-      // Get the top element of the node
-      child = node.firstChild;
-      // This block will keep looping until the variable child has no value (is null)
-      while (child)
-      {
-        // call this function on the child (recursion!!!)
-        walk(child);
-        // get the next element from node, which is the child's first sibling
-        next = child.nextSibling;
-        child = next;
-      }
-      // Exit the switch
-      break;
+        // This block of code is executed if the nodeType is any of the three above
+        // Get the top element of the node
+        child = node.firstChild;
+        // This block will keep looping until the variable child has no value (is null)
+        while (child)
+        {
+          // call this function on the child. Notice that the walk function
+          // is now calling itself. This is called recursion.
+          walk(child);
+          // get the next element on the node, which is the child's first sibling
+          next = child.nextSibling;
+          child = next;
+        }
+        // Exit the switch
+        break;
 	    
-	case 3: // Text node
-    // Perform the substitution on this node because it is a text node.
-    handleText(node);
-    break;
+      case 3: // Text node
+        // Perform the substitution on this node because it is a text node.
+        handleText(node);
+        break;
   }
 }
 
