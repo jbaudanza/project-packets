@@ -160,6 +160,14 @@ If you cannot understand the meaning if an error, copy and paste it into Google.
 
 At this stage there is no problem you will encounter that hasn't already been solved by thousands of other people. The answers are all on the Internet. Keep googling!
 
+### Common errors
+
+Everything must be spelled exactly right, including capitalization.
+
+All open parenthesis, quotation, or curly brace should have a corresponding
+closing parenthesis, quotation, or curly brace. Very often, "unbalanced"
+curly braces will cause errors that can be hard to track down.
+
 ### What if there are no errors?
 
 Sometimes the computer will not generate any errors, but it still won't do what you want. If this happens, you can generate your own messages into the Javascript Console to help you figure out what is broken. To do this, use the `console.log` function.
