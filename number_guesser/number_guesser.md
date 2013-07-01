@@ -56,68 +56,73 @@ As usual, create a new folder for this packet and put the following files inside
 </html>
 ```
 
+<div class="break"></div>
+
 *guess.js*
 
 ```javascript
 document.addEventListener('DOMContentLoaded', function() {
 
-	// The secretNumber variable refers to a random number between 0 and 10,000.
-	// Math.random returns a random value betweeon 0.0 and 1.0
-	// Math.floor takes a decimal number and truncates the decimals, leaving an integer
-	var secretNumber = Math.floor(Math.random()*10000);
-	// numGuesses will keep track of how many guesses the user has made. So far, none.
-	var numGuesses = 0;
+  // The secretNumber variable refers to a random number between 0 and 10,000.
+  // Math.random returns a random value betweeon 0.0 and 1.0
+  // Math.floor takes a decimal number and truncates the decimals, leaving an integer
+  var secretNumber = Math.floor(Math.random()*10000);
+  // numGuesses will keep track of how many guesses the user has made. So far, none.
+  var numGuesses = 0;
 
-	// variables referencing elements of the HTML
-	var guessList = document.getElementById('guess-list');
-	var form = document.getElementById('guess-form');
-	var guessInput = document.getElementById('guess-input');
-	
-	// This is the code we execute each time the form is submitted (when the user hits enter in the input box).
-	form.addEventListener('submit', function(event) {
-		event.preventDefault();
+  // variables referencing elements of the HTML
+  var guessList = document.getElementById('guess-list');
+  var form = document.getElementById('guess-form');
+  var guessInput = document.getElementById('guess-input');
 
-		// the user's input
-		var guess = guessInput.value;
-		// increase the number of guesses.
-		numGuesses += 1;
+  // This is the code we execute each time the form is submitted (when the user
+  // hits enter in the input box).
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-		// a new list item
-		var li = document.createElement('li');
-		// sets the text of the list item to the user's input
-		li.textContent = guess;
-		// adds the list item to the unordered list guessList to display to the user.
-		guessList.appendChild(li);
+    // the user's input
+    var guess = guessInput.value;
+    // increase the number of guesses.
+    numGuesses += 1;
 
-		// another new list item
-		var li2 = document.createElement('li');
-		// this conditional checks if the user's input is a number
-		if (isNaN(parseFloat(guess))) {
-		    li2.textContent = "You must guess an integer.";
-		    // change the color of this list item to red
-		    li2.style.color = "red";
-		} else if (guess == secretNumber) {
-		    li2.textContent = "You guessed it! It took you " + numGuesses + " guesses.";
-		    // to green...
-		    li2.style.color = "green";
-		} else if (guess < secretNumber) {
-		    li2.textContent = "Tooooo looow...";
-		    // to blue...
-		    li2.style.color = "blue";
-		} else {
-		    li2.textContent = "Too high!";
-		    // to yellow.
-		    li2.style.color = "yellow";
-		}
-		// add this list item to the guessList also.
-		guessList.appendChild(li2);
+    // a new list item
+    var li = document.createElement('li');
+    // sets the text of the list item to the user's input
+    li.textContent = guess;
+    // adds the list item to the unordered list guessList to display to the user.
+    guessList.appendChild(li);
 
-		// always display the bottom of the list and clear the input form
-		guessList.scrollTop = guessList.scrollHeight;
-		guessInput.value = '';
-	    });
-    });
+    // another new list item
+    var li2 = document.createElement('li');
+    // this conditional checks if the user's input is a number
+    if (isNaN(parseFloat(guess))) {
+        li2.textContent = "You must guess an integer.";
+        // change the color of this list item to red
+        li2.style.color = "red";
+    } else if (guess == secretNumber) {
+        li2.textContent = "You guessed it! It took you " + numGuesses + " guesses.";
+        // to green...
+        li2.style.color = "green";
+    } else if (guess < secretNumber) {
+        li2.textContent = "Tooooo looow...";
+        // to blue...
+        li2.style.color = "blue";
+    } else {
+        li2.textContent = "Too high!";
+        // to yellow.
+        li2.style.color = "yellow";
+    }
+    // add this list item to the guessList also.
+    guessList.appendChild(li2);
+
+    // always display the bottom of the list and clear the input form
+    guessList.scrollTop = guessList.scrollHeight;
+    guessInput.value = '';
+  });
+});
 ```
+
+<div class="break"></div>
 
 *guess.css*
 

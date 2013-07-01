@@ -41,7 +41,8 @@ The "run_at" item tells Chrome to run the script after it has already rendered t
 This script is executed as defined in the manifest file.
 
 ```javascript
-// This is the entry point for the script. It calls the walk function on the HTML body of the loaded webpage.
+// This is the entry point for the script. It calls the walk function on the
+// HTML body of the loaded webpage.
 walk(document.body);
 
 // This variable keeps track of whether or not we've already alerted the user.
@@ -116,3 +117,4 @@ For example, try http://en.wikipedia.org/wiki/Lizard
 ## See what you can do!
 
   - Only substitute words in h1 tags.
+  - Make an extension that changes the word "Soccer" to "Football".
