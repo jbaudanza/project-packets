@@ -158,7 +158,7 @@ and here is the beginning of my manifest:
   "version": "1.0",
 ```
 
-The end of each line in the manifest file needs to end with a comma. Notice that I forgot a comma on line 2. This is the cause of the error, even though Chrome is reporting the error on line 3.
+The end of each definition in the manifest file needs to end with a comma. Notice that I forgot a comma on line 2. This is the cause of the error, even though Chrome is reporting the error on line 3.
 
 ### Slimtext warning
 

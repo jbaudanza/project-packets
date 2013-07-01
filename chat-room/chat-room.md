@@ -37,7 +37,8 @@ are not allowed to make requests to remote resources on the Internet.
   "version": "1.0",
   "manifest_version": 2,
 
-  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://jbaudanza.firebaseIO-demo.com/ https://s-demo.firebaseio-demo.com/; object-src 'self'",
+  "content_security_policy":
+    "script-src 'self' https://*.firebase.com https://*.firebaseio.com; object-src 'self'",
 
   "app": {
     "launch": {
@@ -82,8 +83,6 @@ to type in the comments*
 </body>
 </html>
 ~~~
-
-<div class='break'></div>
 
 *chat.css*
 
@@ -133,13 +132,13 @@ need to type in the comments.
  * You may want to change the URL below to be something unique. For example,
  * you might change it to:
  *
- *   'https://jbaudanza.firebaseIO-demo.com/chat_room_for_dog_owners'
+ *   'https://dcode.firebaseio.com/chat_room_for_dog_owners'
  *     or
- *   'https://jbaudanza.firebaseIO-demo.com/chat_room_football_fans'
+ *   'https://dcode.firebaseio.com/chat_room_football_fans'
  *
  * Every unique URL will create a new chatroom.
  */
-var chatRoom = new Firebase('https://jbaudanza.firebaseIO-demo.com/chat_room');
+var chatRoom = new Firebase('https://dcode.firebaseio.com/chat_room');
 
 /*
  * This tells the browser to wait until the DOMContentLoaded event occurs before
@@ -224,3 +223,8 @@ icon called "Chat Room".
   - Let users to identify themselves with a nickname. Send the nickname with each message.
   - Let users to upload pictures into the chatroom.
   - Let users join multiple chat rooms
+
+If you want to see what else you can with Firebase, go look at some of their
+demos online. All the demos include HTML and Javascript source code.
+
+https://www.firebase.com/docs/examples.html
