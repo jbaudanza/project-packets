@@ -87,29 +87,29 @@ to type in the comments*
 
 *chat.css*
 
-The parts of the code after `//` are "comments". You do not  need to type in the
-comments.
+The parts of the code between `/*` and `*/` are "comments". You do not need to
+type in the comments.
 
 ~~~ css
 #chat-message-list {
-  // Give the message list a height of 500 pixels
+  /* Give the message list a height of 500 pixels */
   height: 500px;
 
-  // The list will have a solid 1 pixel border.
+  /* The list will have a solid 1 pixel border. */
   border: 1px solid grey;
 
-  // This tells the browser that the message list should add a scrollbar to
-  // the y-axis
+  /* This tells the browser that the message list should add a scrollbar to
+     the y-axis */
   overflow-y: auto;
 
-  // Add 15 pixels of blank space between the border of the message list and its
-  // contents.
+  /* Add 15 pixels of blank space between the border of the message list and its
+     contents. */
   padding: 15px;
 }
 
 #chat-message-list li {
-  // The browser usually gives lists a default styling, but we want to turn
-  // that off.
+  /* The browser usually gives lists a default styling, but we want to turn
+     that off. */
   list-style-type: none;
   padding: 0;
 }

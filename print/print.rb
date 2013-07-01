@@ -10,14 +10,17 @@ end
 
 markdown = Redcarpet::Markdown.new(PygmentizeHTML, :fenced_code_blocks => true)
 
+$file_dir = File.dirname(__FILE__)
+project_root = File.join($file_dir, '/../')
+
 def render(&proc)
-  template = ERB.new(File.read('print.html.erb'))
+  template = ERB.new(File.read($file_dir + '/print.html.erb'))
   template.result(binding)
 end
 
-mardowns = Dir.glob('*/*.md') + Dir.glob('../*.md')
+markdowns = Dir.glob(project_root + '*/*.md') + Dir.glob(project_root + '*.md')
 
-mardowns.each do |markdown_name|
+markdowns.each do |markdown_name|
   output = render do
     markdown.render(File.read(markdown_name))
   end
