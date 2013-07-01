@@ -7,3 +7,6 @@ Project packs for d-code bootcamp
  * [Substitution](/butt_sub/sub.md)
  * [Number guesses](/number_guesser/number_guesser.md)
 
+[Debugging tips](help.md)
+
+[Chat room](https://www.hipchat.com/gtxNPKIxD)
