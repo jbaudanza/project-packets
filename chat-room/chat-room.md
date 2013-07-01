@@ -5,8 +5,8 @@ send messages to other users over the Internet.
 
 ## Core concepts
 
-  * Integrating software that is written by a third party.
   * Communicating and storing things over the Internet.
+  * Integrating software that is written by a third party.
 
 So far, you have been building sofware that runs on your personal machine. You have been accessing data that exists
 on your machine or has been fetched for you by your browser.
@@ -16,9 +16,10 @@ In this project, we will show you how to communicate with other machines and sto
 To do this, you need to use a server. A server is a computer that is always online and connected to the Internet.
 
 Setting up and running your own server can be expensive and difficult. Firebase is a company that has servers, and allows
-you to build applications that use them.
+you to build applications that use them. The chat application that you will build
+will use Firebase's servers to allow users to communicate with each other.
 
-For more information, visit www.firebase.com and read the documentation.
+For more information on how Firebase works, visit www.firebase.com and read through the documentation.
 
 ## Files
 
@@ -48,11 +49,9 @@ are not allowed to make requests to remote resources on the Internet.
 }
 ~~~
 
-chat.html
+<div class="break"></div>
 
-The parts of the code between `<!--` and `-->` are called "comments". They have
-no functional purpose, other than to give notes to the reader. *You do not need
-to type in the comments*
+*chat.html*
 
 ~~~ html
 <!DOCTYPE html>
@@ -121,8 +120,9 @@ input[type=text] {
 
 *chat.js*
 
-The parts of the code between `/*` and `*/` are called "comments". You do not
-need to type in the comments.
+The parts of the code between `/*` and `*/` are called "comments". They serve no
+functional purpose, other than to inform the reader. You do not need to type in
+the comments.
 
 ~~~ javascript
 /*
@@ -220,11 +220,21 @@ icon called "Chat Room".
 
 ## Improvement ideas
 
+This is a very basic chat room. There is a lot of room for improvement. For example:
+
   - Let users to identify themselves with a nickname. Send the nickname with each message.
   - Let users to upload pictures into the chatroom.
-  - Let users join multiple chat rooms
+  - Let users join multiple chat rooms.
 
 If you want to see what else you can with Firebase, go look at some of their
 demos online. All the demos include HTML and Javascript source code.
 
 https://www.firebase.com/docs/examples.html
+
+By integrating with Firebase, your application gained functionality that would
+have been difficult to build yourself. Integrating with third party services
+is a great way to quickly add rich features to your application.
+
+In addition to Firebase, there are many more companies that provide services for
+developers. For example: Facebook, Twitter, Google, Instram, and many more. Try
+Googling around to see what you can find.
