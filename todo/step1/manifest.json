@@ -1,0 +1,14 @@
+{
+  "name": "To Do List step 1",
+  "description": "A pop-up To Do List for your browser",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "todo.html",
+    "default_icon":"icon19.png",
+    "default_title":"TDL1"
+  },
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" }
+}

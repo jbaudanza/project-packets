@@ -93,14 +93,6 @@ function todoItem(title, description){
   self.title = title;
   self.description = description;
 }
-/* Further optional features and tips:
- * 2.1: Store the list on Google Drive
- *      - add an html input to the newItemForm div
- *      - add code to clear the field and copy the priority value into the todolist
- *      should a priority be a code (high, middle, low) or a value (1-10)? How will that affect how it is displayed?
- * 1.2: add a due date field
- *      - same steps as for priority, but dates need to be formatted carefully for display
- *      there are javascript frameworks/code snippets available to display calendars. Can you integrate one into the newItemForm?
  */
 /******************************************************************
  * Step 3: load the todo list from local storage                   *
