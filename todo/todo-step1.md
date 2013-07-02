@@ -13,22 +13,22 @@ Every Chrome extension needs a manifest file.
 First, create a new folder to store your code in, usually somewhere underneath your 'home' folder. You will be putting all the files you'll create in this folder.
 
 Create a new file called `manifest.json`, open it in your text editor, and enter the following:
--------------------------------------------------------------
-`{
-  "name": "To Do List",
-  "description": "A pop-up To Do List for your browser",
-  "version": "1.0",
-  "manifest_version": 2,
-  "browser_action": {
-    "default_popup": "todo.html",
-    "default_icon":"icon19.png",
-    "default_title":"To Do List"
-  },
-  "icons": { "16": "icon16.png",
-           "48": "icon48.png",
-          "128": "icon128.png" }
-}`
------------------------------------------------------------
+
+    {
+      "name": "To Do List",
+      "description": "A pop-up To Do List for your browser",
+      "version": "1.0",
+      "manifest_version": 2,
+      "browser_action": {
+        "default_popup": "todo.html",
+        "default_icon":"icon19.png",
+        "default_title":"To Do List"
+      },
+      "icons": { "16": "icon16.png",
+              "48": "icon48.png",
+              "128": "icon128.png" }
+    }
+
 Save this file in the folder you created
 
 *Details:*
@@ -53,32 +53,32 @@ The 'icon1.png' is the main toolbar image that Chrome will display for users to 
 Your manifest file also mentioned an HTML file, then 'todo.html' file. So we need to create that now or the extenstion won't run.
 This HTML file is the primary resource for the extension; it will be opened by Chrome when it runs your extension and it must handle everything your extension does.
 So create a new file called "todo.html" in your text editor, and make it look like this:
---------------------------------------------------
-`<!DOCTYPE html>
-<html>
-<head>
-  <title>To Do List</title>
-  <meta charset="UTF-8"> 
-  <link rel="stylesheet" type="text/css" href="todo.css">
-</head>
-<body>
-  <div id="container">
-    <h2 id="listTitle">ToDo List</h2>
-    <ul class="todoList" id="todoList">
-    </ul>
-    <button class="command" id="addNewItem">New Item</button>
-  </div>
-  <div id="newItemForm" style="display:none">
-    <label for="itemTitle">Title</label>
-    <input type="text" class="formField" id="itemTitle"/>
-    <label for="itemDesc">Description</label>
-    <textarea class="formField" id="itemDesc"></textarea>
-    <button class="command" id="confirmNewItem">Confirm</button>
-  </div>
-  <script src="todo.js" type="text/javascript"></script>
-</body>
-</html>`
--------------------------------------------------
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>To Do List</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="todo.css">
+    </head>
+    <body>
+      <div id="container">
+        <h2 id="listTitle">ToDo List</h2>
+        <ul class="todoList" id="todoList">
+        </ul>
+        <button class="command" id="addNewItem">New Item</button>
+      </div>
+      <div id="newItemForm" style="display:none">
+        <label for="itemTitle">Title</label>
+        <input type="text" class="formField" id="itemTitle"/>
+        <label for="itemDesc">Description</label>
+        <textarea class="formField" id="itemDesc"></textarea>
+        <button class="command" id="confirmNewItem">Confirm</button>
+      </div>
+      <script src="todo.js" type="text/javascript"></script>
+    </body>
+    </html>
+
 then save it in your folder as normal.
 
 *Details:*
@@ -96,53 +96,51 @@ So generally we try to avoid putting style or script in the html, and use separa
 This css file is going to be very basic, because you will want to style your extension how you want it. Again, if you have a member of your team who is particularly artistic you may want to let them add more style to the css file while the rest of the team moves ahead
 
 So, create a new text file called "todo.css", and enter this into it:
----------------------------------------------------
-`
-#container{
-  width:200px;
-  height:400px;
-  padding:5px;
-}
-.todoList{
-  width:100%;
-  padding:5px;
-}
-.todoItem{
-  width:180px;
-  padding:5px;
-  font-size:12px;
-  font-family:sans-serif;
-  display:block;
-}
-.itemTitle{
-  font-size:15px;
-  color:blue;
-}
-.itemDesc{
-  padding-left:5px;
-}
-.command{
-  width:100px;
-  text-align:center;
-  margin-top:15px;
-}
-#newItemForm{
-  position:absolute;
-  z-index:100;
-  top:20px;
-  left:20px;
-  bottom:20px;
-  right:20px;
-  border:5px blue solid;
-  border-radius:20px;
-  padding:25px;
-  background-color:white;
-}
-.formField{
-  width:100%;
-}
-`
----------------------------------------------------
+
+    #container{
+      width:200px;
+      height:400px;
+      padding:5px;
+    }
+    .todoList{
+      width:100%;
+      padding:5px;
+    }
+    .todoItem{
+      width:180px;
+      padding:5px;
+      font-size:12px;
+      font-family:sans-serif;
+      display:block;
+    }
+    .itemTitle{
+      font-size:15px;
+      color:blue;
+    }
+    .itemDesc{
+      padding-left:5px;
+    }
+    .command{
+      width:100px;
+      text-align:center;
+      margin-top:15px;
+    }
+    #newItemForm{
+      position:absolute;
+      z-index:100;
+      top:20px;
+      left:20px;
+      bottom:20px;
+      right:20px;
+      border:5px blue solid;
+      border-radius:20px;
+      padding:25px;
+      background-color:white;
+    }
+    .formField{
+      width:100%;
+    }
+
 then save the file in the folder as normal
 
 *Details*
@@ -153,58 +151,56 @@ The javascript file contains all the behaviour for the page items, including the
 For this example we're using plain javascript, partly to minimise bandwidth use during the event, but there are plenty of javascript libraries and frameworks that make life easier when writing web page behaviour javascript, Jquery being the most common one. Don't use it for this example, but check it out if you've got time and curiousity.
 
 Create a file called "todo.js" as normal, and add this code to it:
-----------------------------------------------------
-`
-"use strict";
-// set up event handlers
-var newItemButton = document.getElementById("addNewItem");
-newItemButton.addEventListener("click",addNewItem);
-var confirmButton = document.getElementById("confirmNewItem");
-confirmButton.addEventListener("click", confirmNewItem);
 
-function addNewItem(){
-  // clear the fields
-  var itemTitle = document.getElementById("itemTitle");
-  itemTitle.value = "";
-  var itemDesc = document.getElementById("itemDesc");
-  itemDesc.value = "";
-  // display the add new item div
-  var newItemForm = document.getElementById("newItemForm");
-  newItemForm.style.display = "block";
-}
+    "use strict";
+    // set up event handlers
+    var newItemButton = document.getElementById("addNewItem");
+    newItemButton.addEventListener("click",addNewItem);
+    var confirmButton = document.getElementById("confirmNewItem");
+    confirmButton.addEventListener("click", confirmNewItem);
 
-function confirmNewItem(){
-  //create the list item
-  var itemTitle = document.getElementById("itemTitle").value;
-  var itemDesc = document.getElementById("itemDesc").value;
-  createItem(itemTitle,itemDesc);
+    function addNewItem(){
+      // clear the fields
+      var itemTitle = document.getElementById("itemTitle");
+      itemTitle.value = "";
+      var itemDesc = document.getElementById("itemDesc");
+      itemDesc.value = "";
+      // display the add new item div
+      var newItemForm = document.getElementById("newItemForm");
+      newItemForm.style.display = "block";
+    }
 
-  // and hide the form again
-  var newItemForm = document.getElementById("newItemForm");
-  newItemForm.style.display = "none";
-}
+    function confirmNewItem(){
+      //create the list item
+      var itemTitle = document.getElementById("itemTitle").value;
+      var itemDesc = document.getElementById("itemDesc").value;
+      createItem(itemTitle,itemDesc);
 
-function createItem(title, description){
-  // add a new item to the list
-  var todoList = document.getElementById("todoList");
-  var todoItem = document.createElement("li");
-  todoItem.className="todoItem";
-  todoList.appendChild(todoItem);
+      // and hide the form again
+      var newItemForm = document.getElementById("newItemForm");
+      newItemForm.style.display = "none";
+    }
 
-  // now add the title and description
-  // title
-  var titleSpan = document.createElement("span");
-  titleSpan.className = "itemTitle";
-  titleSpan.innerHTML =title;
-  todoItem.appendChild(titleSpan);
-  // description
-  var descSpan = document.createElement("span");
-  descSpan.className = "itemDesc";
-  descSpan.innerHTML = description;
-  todoItem.appendChild(descSpan);
-}
-`
------------------------------------------------
+    function createItem(title, description){
+      // add a new item to the list
+      var todoList = document.getElementById("todoList");
+      var todoItem = document.createElement("li");
+      todoItem.className="todoItem";
+      todoList.appendChild(todoItem);
+
+      // now add the title and description
+      // title
+      var titleSpan = document.createElement("span");
+      titleSpan.className = "itemTitle";
+      titleSpan.innerHTML =title;
+      todoItem.appendChild(titleSpan);
+      // description
+      var descSpan = document.createElement("span");
+      descSpan.className = "itemDesc";
+      descSpan.innerHTML = description;
+      todoItem.appendChild(descSpan);
+    }
+
 save your file in the folder as normal.
 *Details*
 The purpose of this feature is to create a new list item, so we know we'll need to respond to the click event on the 'new item' button. This event handler clears the fields in the form of any old values left over from a previous item, and displays the form.
