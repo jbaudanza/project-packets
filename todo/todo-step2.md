@@ -1,4 +1,4 @@
-# To Do List Step 1
+# To Do List Step 2
 
 ## Overview
 
@@ -7,43 +7,41 @@ In the previous step we managed to allow the user to create a To Do item, but th
 Because we're only changing the behaviour of the extension, we only need to change the todo.js file. This is one of the main advantages of separating the content, appearance and behaviour into the html, css and js files.
 
 So, open the todo.js file in your text editor and add this code:
-------------------------------------------------------------------
-`
-function todoItem(title, description){
-  // object closure that stores the todo item values
-  self = this;
-  self.title = title;
-  self.description = description;
-}
 
-function getItemsFromHTML(){
-  var result = [];
-  // iterate the list of li's with classname 'todoItem'
-  var elements = document.getElementsByClassName("todoItem");
-  for(var i = 0; i<elements.length;i++){
-    // get the values from the item and add them to the array
-    result.push(getItemValues(elements[i]));
-  }
-  return result;
-}
 
-function getItemValues(itemNode){
-  // get the item's title and discription from the html
-  var title = itemNode.getElementsByClassName("itemTitle")[0].innerHTML;
-  var desc = itemNode.getElementsByClassName("itemDesc")[0].innerHTML;
-  // create a todo item with the values in it
-  var todo = new todoItem(title,desc);
-  // return the item
-  return todo;
-}
+    function todoItem(title, description){
+      // object closure that stores the todo item values
+      self = this;
+      self.title = title;
+      self.description = description;
+    }
 
-function storeItems(list){
-  // store the JSON representation of the array in local storage
-  var jsonList = JSON.stringify(list);
-  localStorage.todoList = jsonList;
-}
-`
------------------------------------------------------------
+    function getItemsFromHTML(){
+      var result = [];
+      // iterate the list of li's with classname 'todoItem'
+      var elements = document.getElementsByClassName("todoItem");
+      for(var i = 0; i<elements.length;i++){
+        // get the values from the item and add them to the array
+        result.push(getItemValues(elements[i]));
+      }
+      return result;
+    }
+
+    function getItemValues(itemNode){
+      // get the item's title and discription from the html
+      var title = itemNode.getElementsByClassName("itemTitle")[0].innerHTML;
+      var desc = itemNode.getElementsByClassName("itemDesc")[0].innerHTML;
+      // create a todo item with the values in it
+      var todo = new todoItem(title,desc);
+      // return the item
+      return todo;
+    }
+
+    function storeItems(list){
+      // store the JSON representation of the array in local storage
+      var jsonList = JSON.stringify(list);
+      localStorage.todoList = jsonList;
+    }
 then save your file as normal
 *Details*
 This feature is about saving the To Do list items, so we know we'll need something that will actually represent a To Do item in storage so we can save it and load it as a 'thing'. Javascript supports the use of objects for this, which are declared as functions, so we'll declare an object called todoItem to store our To Do Items in. If you don't understand how this works yet, try searching the internet for some tutorials on javascript objects to get a better understanding.
@@ -64,15 +62,13 @@ So that looks clear; we'll store the items in the html. But that means we'll nee
 And then we need a function to do the actual storage. `storeItems()` takes a list of todoItems and stores them in the browser's local storage.
 
 But we haven't triggered this storage mechanism yet. Ideally, we'd like to trigger this every time the popup closes, so we remember the state of the popup when it closes and can restore it when we next open it. Normally we'd do this using the `window.onunload` event, writing something like this:
--------------------------------
-`
-window.addEventListener("unload", function(){
-  // load the items from the html into an array
-  var list = getItemsFromHTML();
-  storeItems(list);
-});
-`
---------------------------------
+
+  window.addEventListener("unload", function(){
+    // load the items from the html into an array
+    var list = getItemsFromHTML();
+    storeItems(list);
+  });
+
 However, there's a problem with Chrome's implementation of the `window.onunload` event that means it doesn't fire for popup windows. So while this would be the best design solution, we can't use it. We'll have to implement a workaround instead. You'll find that this happens often with programming; the best solution doesn't work for one reason or another, so you have to find a solution that does work. Just remember to try and keep the workarounds documented and clearly marked in your code so if the problem that caused the workaround disappears in the future, you can change it back to the best solution.
 
 So we need to devise a workaround that will keep the stored version of the list current with the html version of the list, so that when the user closes the window (and Chrome doesn't tell our code that's happened) the stored version is up-to-date. We can do this two ways:
@@ -82,31 +78,29 @@ Monitoring of an entity can be done two ways: we can set up a timer, remember th
 Monitoring the html list would be nice, but we need an event that would fire every time something changed in the list, and looking through the available set of HTML events, there isn't one.
 However, we're already responding to the user's actions, so adding a extra function call to the handlers for those actions is no problem, so let's do that.
 Change the 'confirmNewItem' function so it looks like this:
----------------------------------------------------
-`
-function confirmNewItem(){
-  //create the list item
-  var itemTitle = document.getElementById("itemTitle").value;
-  var itemDesc = document.getElementById("itemDesc").value;
-  createItem(itemTitle,itemDesc);
 
-  // and hide the form again
-  var newItemForm = document.getElementById("newItemForm");
-  newItemForm.style.display = "none";
+    function confirmNewItem(){
+      //create the list item
+      var itemTitle = document.getElementById("itemTitle").value;
+      var itemDesc = document.getElementById("itemDesc").value;
+      createItem(itemTitle,itemDesc);
 
-  // and store the new list
-  var list = getItemsFromHTML();
-  storeItems(list);
-}
-`
-------------------------------------------------
+      // and hide the form again
+      var newItemForm = document.getElementById("newItemForm");
+      newItemForm.style.display = "none";
+
+      // and store the new list
+      var list = getItemsFromHTML();
+      storeItems(list);
+    }
+
 the last 3 lines are the new bit, in case you got lost.
 
 Now, open the chrome://extensions page again and reload your extension, and click on the 'inspect pop-up' to make sure it's all working OK. Fix any problems you find, and once it's working OK, click on the 'resources' tab in the inspector. Look for the line in the left pane that says LocalStorage and the line under it that says 'chrome-extension://' with some random letters after that. Click on that line and you'll see what your popup has stored in the browser's local storage. Something like this:
-`
-key                  value
-todoList             [{"title":"shopping","description":"do the grocery shopping"}]
-`
+
+    key                  value
+    todoList             [{"title":"shopping","description":"do the grocery shopping"}]
+
 this is JSON, or JavaScript Object Notation. It is an easy format to convert javascript values to and from, and underpins a lot of the communications between web sites and web servers. There's a simple set of commands to convert javascript variables to JSON and back: `JSON.stringify()` converts a javascript object to JSON, and `JSON.parse()` converts a JSON object back to a javascript object. Which is what we need to do to get our list back out of storage, so let's get on with that...
 On to step 3!
 

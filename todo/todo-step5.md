@@ -12,95 +12,89 @@ And finally, we need to react to the button click and actually set the item to c
 
 ### CSS changes
 there's also one small addition to the css file which we'll get out of the way first:
-----------------------------------------------
-`
-.complete{
-  text-decoration:line-through;
-}
-`
-----------------------------------------------
+    .complete{
+      text-decoration:line-through;
+    }
 This tells the browser to put a line through the items that have been completed. You can change the effect you want to use to show a completed item if you like; the code looks at the class name not the effect.
 
 ### javascript changes
 The javascript changes are:
------------------------------------------------
-`
-function todoItem(title, description, complete){
-  // object closure that stores the todo item values
-  self = this;
-  self.title = title;
-  self.description = description;
-  self.complete = complete;
-}
 
-function createItem(item){
-  // add a new item to the list
-  var todoList = document.getElementById("todoList");
-  var todoItem = document.createElement("li");
-  todoItem.className="todoItem";
-  todoList.appendChild(todoItem);
+    function todoItem(title, description, complete){
+      // object closure that stores the todo item values
+      self = this;
+      self.title = title;
+      self.description = description;
+      self.complete = complete;
+    }
 
-  // complete button
-  var button = document.createElement("button");
-  button.className = "buttonComplete";
-  button.innerHTML = "Done";
-  todoItem.appendChild(button);
-  button.addEventListener("click",function(){completeItem(todoItem);});
-  // title
-  var titleSpan = document.createElement("span");
-  titleSpan.className = "itemTitle";
-  titleSpan.innerHTML =item.title;
-  todoItem.appendChild(titleSpan);
-  // description
-  var descSpan = document.createElement("span");
-  descSpan.className = "itemDesc";
-  descSpan.innerHTML = item.description;
-  todoItem.appendChild(descSpan);
+    function createItem(item){
+      // add a new item to the list
+      var todoList = document.getElementById("todoList");
+      var todoItem = document.createElement("li");
+      todoItem.className="todoItem";
+      todoList.appendChild(todoItem);
 
-  if(item.complete){
-    button.style.display = "none";
-    titleSpan.className= titleSpan.className + " complete";
-    descSpan.className = descSpan.className + " complete";
-  }
-}
+      // complete button
+      var button = document.createElement("button");
+      button.className = "buttonComplete";
+      button.innerHTML = "Done";
+      todoItem.appendChild(button);
+      button.addEventListener("click",function(){completeItem(todoItem);});
+      // title
+      var titleSpan = document.createElement("span");
+      titleSpan.className = "itemTitle";
+      titleSpan.innerHTML =item.title;
+      todoItem.appendChild(titleSpan);
+      // description
+      var descSpan = document.createElement("span");
+      descSpan.className = "itemDesc";
+      descSpan.innerHTML = item.description;
+      todoItem.appendChild(descSpan);
 
-function getItemValues(itemNode){
-  // get the item's title and discription from the html
-  var title = itemNode.getElementsByClassName("itemTitle")[0].innerHTML;
-  var desc = itemNode.getElementsByClassName("itemDesc")[0].innerHTML;
-  // create a todo item with the values in it
-  var todo = new todoItem(title,desc);
-  // check if it's complete
-  var titleClass = itemNode.getElementsByClassName("itemTitle")[0].className;
-  todo.complete=(titleClass.indexOf("complete") > -1);
-  // return the item
-  return todo;
-}
+      if(item.complete){
+        button.style.display = "none";
+        titleSpan.className= titleSpan.className + " complete";
+        descSpan.className = descSpan.className + " complete";
+      }
+    }
 
-function completeItem(item){
-  var button = item.getElementsByClassName("buttonComplete")[0];
-  button.style.display = "none";
-  var text = item.getElementsByTagName("span");
-  for(var i=0;i<text.length;i++){
-    text[i].className = text[i].className + " complete";
-  }
-  // load the items into the array
-  var list = getItemsFromHTML();
-  // store the items now because it's a change to the list and we can't use onunload
-  storeItems(list);
-}
+    function getItemValues(itemNode){
+      // get the item's title and discription from the html
+      var title = itemNode.getElementsByClassName("itemTitle")[0].innerHTML;
+      var desc = itemNode.getElementsByClassName("itemDesc")[0].innerHTML;
+      // create a todo item with the values in it
+      var todo = new todoItem(title,desc);
+      // check if it's complete
+      var titleClass = itemNode.getElementsByClassName("itemTitle")[0].className;
+      todo.complete=(titleClass.indexOf("complete") > -1);
+      // return the item
+      return todo;
+    }
 
-function storeItems(list){
-  // don't store the completed items
-  var newlist = list.filter(function(item){
-    return !item.complete;
-  });
-  // store the JSON representation of the array in local storage
-  var jsonList = JSON.stringify(newlist);
-  localStorage.todoList = jsonList;
-}
-`
-------------------------------------------------
+    function completeItem(item){
+      var button = item.getElementsByClassName("buttonComplete")[0];
+      button.style.display = "none";
+      var text = item.getElementsByTagName("span");
+      for(var i=0;i<text.length;i++){
+        text[i].className = text[i].className + " complete";
+      }
+      // load the items into the array
+      var list = getItemsFromHTML();
+      // store the items now because it's a change to the list and we can't use onunload
+      storeItems(list);
+    }
+
+    function storeItems(list){
+      // don't store the completed items
+      var newlist = list.filter(function(item){
+        return !item.complete;
+      });
+      // store the JSON representation of the array in local storage
+      var jsonList = JSON.stringify(newlist);
+      localStorage.todoList = jsonList;
+    }
+
 *Details*
 
 There's a slightly clever bit of javascript magic going on here. When the button is created to mark an item as complete, it's given an event handler, like so: `button.addEventListener("click",function(){completeItem(todoItem);});`. This event handler contains an anonymous function (called anonymous because it hasn't been given a name) that does nothing but call the `completeItem()` function. So why not just specify the `completeItem()` function as the event handler?
