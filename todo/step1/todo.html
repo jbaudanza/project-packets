@@ -2,21 +2,21 @@
 <html>
 <head>
   <title>To Do List</title>
-  
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="todo.css">
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <h2 id="listTitle">ToDo List</h2>
     <ul class="todoList" id="todoList">
     </ul>
     <button class="command" id="addNewItem">New Item</button>
   </div>
-  <div class="newItem" id="newItemForm" style="display:none">
+  <div id="newItemForm" style="display:none">
     <label for="itemTitle">Title</label>
     <input type="text" class="formField" id="itemTitle"/>
     <label for="itemDesc">Description</label>
-    <input type="textarea" class="formField" id="itemDesc"/>
+    <textarea class="formField" id="itemDesc"></textarea>
     <button class="command" id="confirmNewItem">Confirm</button>
   </div>
   <script src="todo.js" type="text/javascript"></script>
