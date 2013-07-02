@@ -27,7 +27,7 @@ As usual, create a new folder for this project and add the following files: mani
 
 *manifest.json*
 
-The only unique part of this manifest is the "content_security_policy" section. Because your application will be accessing
+The only unique part of this manifest is the `content_security_policy` section. Because your application will be accessing
 resources on the Internet, we need to instruct Chrome to allow certain URLs to be requested. Normally, Chrome applications
 are not allowed to make requests to remote resources on the Internet.
 
@@ -113,7 +113,7 @@ type in the comments.
 }
 
 input[type=text] {
-  // The text input should be made as wide as possible.
+  /* The text input should be made as wide as possible. */
   width: 100%;
 }
 ~~~
@@ -236,5 +236,5 @@ have been difficult to build yourself. Integrating with third party services
 is a great way to quickly add rich features to your application.
 
 In addition to Firebase, there are many more companies that provide services for
-developers. For example: Facebook, Twitter, Google, Instram, and many more. Try
-Googling around to see what you can find.
+developers. For example: Facebook, Twitter, Google, Instagram, and many more.
+Google around to see what you can find.

@@ -1,7 +1,7 @@
 # Photo booth
 
 In this project, you will create a simple photo booth application. You will use
-the local video camera on your computer and to take snapshots. You can then apply
+the local video camera on your computer to take snapshots. You can then apply
 visual filters to your snapshots.
 
 ## Core concepts
@@ -39,7 +39,7 @@ As usual, create a new folder for this project and add the following files: mani
 
 <div class='break'></div>
 
-photobooth.html
+*photobooth.html*
 
 ~~~ html
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ photobooth.html
 </html>
 ~~~
 
-photobooth.css
+*photobooth.css*
 
 ~~~ css
 #my-photos {
@@ -187,9 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Running the application
 
+Follow the same proceedure in the "hello world" project to install your photo booth
+app into Chrome.
+
 Once you have created your Chrome app, open a new tab tab. There should be an
 icon called "Photo booth".
-
 
 ## Improvement ideas
 

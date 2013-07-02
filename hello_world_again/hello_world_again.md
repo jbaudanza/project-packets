@@ -1,4 +1,4 @@
-# Hello Again
+# Hello World, Again
 
 In this project, you will write your first Chrome Application. You will set it up the same way as the extension, but after you are done, you will launch it a little bit differently.
 
@@ -11,7 +11,7 @@ In this project, you will write your first Chrome Application. You will set it u
 
 ## Getting Started
 
-By now you should have already downloaded Chrome and gotten set up with a text editor (If not, see the "Hello World" packet). Create a new folder (call it whatever you want) for this packet, and as before copy each of the files below into that folder.
+By now you should have already downloaded Chrome and gotten set up with a text editor (If not, see the "Hello World" project). Create a new folder (call it whatever you want) for this project, and as before copy each of the files below into that folder.
 
 ## Source Files
 
@@ -123,11 +123,11 @@ This is an example of what an error looks like the Javascript console:
 
 ![Javascript Console](images/javascript-console.png)
 
-The console is reporting that there is an error in chat.js on line 28. The error is that we are trying to call a function called `getElementByid`, but the correct name of the function is `getElementById`. Notice that the I didn't capitalize the 'i' in Id correctly. Javascript is sensitive to capitalization, and this is what is causing the error.
+The console is reporting that there is an error in hello.js on line 5. The error is that we are trying to call a function called `getElementByid`, but the correct name of the function is `getElementById`. Notice that the I didn't capitalize the 'i' in Id correctly. Javascript is sensitive to capitalization, and this is what is causing the error.
 
 ### Line numbers
 
-An error in the console will contain a relevant line number and file name. Usually the mistake or typo will be on this line, but not always. Sometimes a mistake in an earlier piece of your code will trigger an error in a later part. For example, I received this error when trying to load my Chrome extension.
+An error in the console will contain a relevant file name and line number. Usually the mistake or typo will be on this line, but not always. Sometimes a mistake in an earlier part of your code will trigger an error in a later part. For example, I received this error when trying to load my Chrome extension:
 
 ![Manifest Error](images/manifest-error.png)
 
@@ -150,19 +150,21 @@ The SlimText text editor will give you warnings are you are typing. These warnin
 
 In this example, SlimText is warning us that we have mispelled the world `funtion` on line 5.
 
-SlimText will also apply colors to your code as you type it. You can use these colors as clues to find mistakes. Notice how SlimText applies a different color formatting to the world `function` on line 1 versus the incorrectly spelled `functon` on line 5.
+These messages from SlimText are just warnings, and they don't necessarily mean there is a mistake in your code. But you should use the warnings as clues to help you.
+
+SlimText will also apply colors to your code as you type. You can use these colors as clues to find mistakes. Notice how SlimText applies a different formatting to the world `function` on line 1 versus the incorrectly spelled `functon` on line 5.
 
 ### What does an error mean?
 
 Over time, you will get better at understanding what the computer is trying to tell you in its error messages. In the beginning, however, it can be confusing and frustrating.
 
-If you cannot understand the meaning if an error, copy and paste it into Google. Google can be your best friend when you are coding.
+If you cannot understand the meaning of an error, copy and paste it into Google. Often you will find an online guide or forum that addresses your problem.
 
 At this stage there is no problem you will encounter that hasn't already been solved by thousands of other people. The answers are all on the Internet. Keep googling!
 
 ### Common errors
 
-Everything must be spelled exactly right, including capitalization.
+Everything must be spelled exactly right, including capitalization. Pay attention to details.
 
 All open parenthesis, quotation, or curly brace should have a corresponding
 closing parenthesis, quotation, or curly brace. Very often, "unbalanced"
@@ -178,7 +180,7 @@ For example:
 console.log('Hello 1');
 
 document.addEventListener('DMContentLoaded', function() {
-  console.log('Hello 2')
+  console.log('Hello 2');
 
   // more setup goes here..
 });
@@ -197,7 +199,7 @@ Indeed, I have mispelled the event name, `DOMContentLoaded`. I have left out an 
 
 ## See what you can do!
 
-Can you think of any features to add to this application?
+Once you have completed and debugged your first Chrome application, try to think of ways you want to customize it. For example:
 
   - Add another text box to change the greeting from "Hello" to something else.
   - Try changing the color of the `h1` element. What other styles can be added to this element?

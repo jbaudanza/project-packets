@@ -38,8 +38,6 @@ The "run_at" item tells Chrome to run the script after it has already rendered t
 
 *substitution.js*
 
-This script is executed as defined in the manifest file.
-
 ```javascript
 // This is the entry point for the script. It calls the walk function on the
 // HTML body of the loaded webpage.
@@ -110,9 +108,7 @@ function handleText(textNode)
 
 ## Running your Chrome extension
 
-You should load this extension as usual from chrome://extensions, but you won't need to do anything to launch it. Just navigate in Chrome to a page that contains the word "lizard" and see what happens!
-
-For example, try http://en.wikipedia.org/wiki/Lizard
+You should load this extension as usual from chrome://extensions, but you won't need to do anything to launch it. Just navigate in Chrome to a page that contains the word "lizard" and see what happens! For example, try http://en.wikipedia.org/wiki/Lizard
 
 ## See what you can do!
 

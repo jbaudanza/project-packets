@@ -4,15 +4,20 @@ During this bootcamp, you will be creating applications and extensions for
 Google Chrome. We want everyone to leave this bootcamp with a Google Chrome app
 that they created.
 
-If you have never written a line of codein your life, that's OK. We will give
-you all the code you need on printed project packets. You just need to copy the
-code exactly as it is written into the computer. As you do this, you are bound
-to make mistakes. We hope that as you fix your mistakes, you will also learn
-about coding.
+If you have never written a line of code in your life, don't worry. This booklet
+contains the code for several fun project. You just need to copy the code
+exactly as it is written on paper into your computer.
 
-As you are going, try to think of ways you can customize the projects. For
-example, you can change the colors and the styling. Or you can combine features
-from multiple projects into one. Be as creative as you'd like!
+As you do this, you are bound to make mistakes. This is normal. We hope that as
+you fix your mistakes, you will also learn about coding.
+
+You can do these projects in any order, but we recommend that you start with the
+"Hello World" and "Hello World, Again" projects.
+
+While you are working, try to think of ways you can customize these projects.
+For example, you might change the colors or the styling. Or you could combine
+features from multiple projects into one. Or maybe you can find some code on the
+Internet that you'd like to incorporate. Be as creative as you'd like!
 
 We would like to encourage everyone to work together and help each other as
 much as possible. Learning to code is difficult, but it is much easier when
@@ -33,6 +38,8 @@ In this project, you will first get set up with your development environment. We
 
 Your first extension is a Hello World Chrome extension that responds to the browser-action of clicking an icon by displaying a pop-up that says "Hello, world!"
 
+<div class='break'></div>
+
 ## Core Concepts
 
   * Installing Chrome
@@ -42,7 +49,7 @@ Your first extension is a Hello World Chrome extension that responds to the brow
 
 ## Getting Started
 
-First, download and install Chrome Web Browser from here: https://www.google.com/intl/en/chrome/browser/.
+First, download and install the Chrome Web Browser from here: https://www.google.com/intl/en/chrome/browser/.
 
 If you have a text editor of choice, feel free to use it. If not, we recommend the Slim Text Chrome Application, which you can get here: http://slimtext.org/. (NOTE: Along with syntax highlighting, Slim Text will also match parentheses and brackets for you.)
 
@@ -58,6 +65,8 @@ In the rest of this packet, we will provide you with the necessary text files fo
 5. Then open a new file by clicking the page-with-a-corner-folded-down icon, the left-most icon at the top right. 
 
 Be sure to name the files as they appear below. Rember to save your files (NOTE: an asterisk by the file name means your changes have not been saved)!
+
+<div class='break'></div>
 
 ## Source Files
 
@@ -86,7 +95,7 @@ This file describes what our popup will look like.
 ```html
 <!DOCTYPE html>
 <html>
-  <!-- This is an HTML comment. You do not need to type these. -->
+  <!-- This is an HTML comment. You do not need to copy these. -->
   <head>
     <!-- This block describes the style of the body. -->
     <style>
@@ -108,13 +117,13 @@ This file describes what our popup will look like.
 To run your Chrome extension, 
 
 1. Go to chrome://extensions in your Chrome browser. 
-2. Click the checkbox next to "Developer mode" in the top right
-3. Then click “Load unpacked extension...” button. 
+2. Click the checkbox next to "Developer mode" in the top right.
+3. Then click "Load unpacked extension..." button.
 4. Select the folder that your manifest and html files are in. 
 
 You should see your extension appear in the list of extensions below.
 
-If you see a pop-up with an error message, it propably means that you mis-typed something in one of the files. See if you can figure out what you did wrong by reading the error message. Once you think you've fixed the problem, click the checkbox next to "Enable" near your extension and then click "Reload." Don't hesitate to ask for help if you get stuck. To ask for help, you can put your name in THIS QUEUE and a volunteer will come find you.
+If you see a pop-up with an error message, it propably means that you mis-typed something in one of the files. See if you can figure out what you did wrong by reading the error message. Once you think you've fixed the problem, click the checkbox next to "Enable" near your extension and then click "Reload." Don't hesitate to ask for help if you get stuck. To ask for help, find a volunteer or ask for help in the d-code chat room.
 
 Once your extension is installed successfully, you should see a puzzle-piece icon in the top right of your Chrome browser. Click it!
 
