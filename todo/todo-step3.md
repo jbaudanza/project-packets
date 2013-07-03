@@ -98,8 +98,8 @@ Once you've done that an ironed out any bugs, you've got a working To Do List th
 So if you found that all very easy, then try your hand at adding some more features to the list:
 
 ### fetch from chrome storage instead of local storage if you did the previous optional extra
-
 + should be obvious how to change it, this is an easy one
+
 ### 3.2 flag a reminder if the due date is close (if you added a due date in step 1)
 + when you load the item, you can check its due date and see if the item is due soon.
 + how would be a good way of alerting the user that an item is due soon? Remember, you want to catch their attention briefly and highlight the item, but not be so intrusive as to annoy them.

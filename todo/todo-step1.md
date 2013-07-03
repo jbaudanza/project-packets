@@ -34,6 +34,7 @@ Create a new file called `manifest.json`, open it in your text editor, and enter
 Save this file in the folder you created
 
 *Details:*
+
 The manifest file tells Chrome what your extension is, and some things about it. The main things to note are the "browser_action" entries, which tell Chrome what your extension does; it's a popup extension that uses the "icon19.png" icon on the toolbar, with a tooltip of "To Do List" and which lanuches the "todo.html" file when clicked.
 
 ### 2: Pretty Pictures
@@ -98,10 +99,10 @@ The CSS file contains instructions for how the page contents should be displayed
 
 + HTML files contain the *structure* of your page; which items are present and how they are related to each other
 + CSS files contain the *appearance* of your page; what each item looks like and where it sits on the page
-+ JS files contain the *behaviour* of your page; what each item does and the events it responds to
++ JS files contain the *behaviour* of your page; what each item does and the events it responds to.
 So generally we try to avoid putting style or script in the html, and use separate css and js files for it to make our lives easier when we have to come back and change the code later.
 
-This css file is going to be very basic, because you will want to style your extension how you want it. Again, if you have a member of your team who is particularly artistic you may want to let them add more style to the css file while the rest of the team moves ahead
+This css file is going to be very basic, because you will want to style your extension how you want it. Again, if you have a member of your team who is particularly artistic you may want to let them add more style to the css file while the rest of the team moves ahead.
 
 So, create a new text file called "todo.css", and enter this into it:
 
@@ -151,7 +152,7 @@ So, create a new text file called "todo.css", and enter this into it:
 }
 ```
 
-then save the file in the folder as normal
+then save the file in the folder as normal.
 
 *Details*
 
@@ -159,7 +160,8 @@ The "#newItemForm" rule is the only really interesting one, it specifies that th
 
 ### 5: JS file
 The javascript file contains all the behaviour for the page items, including the event handlers and code to create objects.
-For this example we're using plain javascript, partly to minimise bandwidth use during the event, but there are plenty of javascript libraries and frameworks that make life easier when writing web page behaviour javascript, Jquery being the most common one. Don't use it for this example, but check it out if you've got time and curiousity.
+
+For this example we're using plain javascript, partly to minimise bandwidth use during the event, but there are plenty of javascript libraries and frameworks that make life easier when writing web page behaviour javascript, jQuery being the most common one. Don't use it for this example, but check it out if you've got time and curiousity.
 
 Create a file called "todo.js" as normal, and add this code to it:
 
@@ -225,12 +227,15 @@ The function to create the item simply creates a new list item at the end of the
 
 ### 6: Debugging
 We're done! that's the extension finished! well... nearly
+
 Follow the instructions for getting Chrome to load your extension, and make sure any errors are dealt with so Chrome is happy. You should see your icon appear in the Chrome toolbar to the right if everything's OK.
 
 You can click on it now if you like, but it probably won't work. Very few programmers ever enter all the code right first time with no errors.
+
 Right-click on the icon and choose the 'inspect pop-up' menu entry. Then when the inspector opens, check if there's a red circle on the bottom row and click it if there is. This will take you to the line containing a problem if you have one. Check that line against the listing above and correct it.
 
 When you get no more errors, you should have a working To Do List, well done!
+
 Except, of course, that whenever you close the list, all the items vanish and don't come back. This isn't good, let's fix this... on to Step 2!
 
 ##Optional Extras##

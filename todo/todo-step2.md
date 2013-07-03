@@ -45,7 +45,9 @@ function storeItems(list){
 ```
 
 then save your file as normal
+
 *Details*
+
 This feature is about saving the To Do list items, so we know we'll need something that will actually represent a To Do item in storage so we can save it and load it as a 'thing'. Javascript supports the use of objects for this, which are declared as functions, so we'll declare an object called todoItem to store our To Do Items in. If you don't understand how this works yet, try searching the internet for some tutorials on javascript objects to get a better understanding.
 At this point, each To Do item only consists of a title and a description, so those are the only fields we need for it.
 

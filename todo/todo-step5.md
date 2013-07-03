@@ -120,8 +120,8 @@ And that's it! a fully-functional todo list in your browser. Well done, you've c
 ## Optional Extras
 So if you found that all very easy, then try your hand at adding some more features to the list:
 
-* add a button to 'un-complete' the item
-* add a 'history' display that tracks how many items the user has completed on each date
-    * you'll need a new div that can be hidden/shown to display the data
-    * a list is easiest, but a graph is cooler... check out the `<canvas>` element to get drawing!
-    * keep a separate locaStorage.history json object that remembers how many items were completed, maybe?
+### add a button to 'un-complete' the item
+### add a 'history' display that tracks how many items the user has completed on each date
+  * you'll need a new div that can be hidden/shown to display the data
+  * a list is easiest, but a graph is cooler... check out the `<canvas>` element to get drawing!
+  * keep a separate locaStorage.history json object that remembers how many items were completed, maybe?
